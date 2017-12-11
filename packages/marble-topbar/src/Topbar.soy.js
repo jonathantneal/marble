@@ -12,7 +12,9 @@ var soydata = goog.require('soydata');
 /**
  * @fileoverview Templates in namespace Topbar.
  * @hassoydeltemplate {Topbar.item.idom}
+ * @hassoydeltemplate {Topbar.logo.idom}
  * @hassoydelcall {Topbar.item.idom}
+ * @hassoydelcall {Topbar.logo.idom}
  * @public
  */
 
@@ -36,7 +38,7 @@ function $render(opt_data, opt_ijData, opt_ijData_deprecated) {
   incrementalDom.elementOpenStart('nav');
       incrementalDom.attr('class', styleClasses__soy4);
   incrementalDom.elementOpenEnd();
-    $logo(opt_data, null, opt_ijData);
+    soy.$$getDelegateFn(soy.$$getDelTemplateId('Topbar.logo.idom'), '', false)(opt_data, null, opt_ijData);
     $menu(opt_data, null, opt_ijData);
   incrementalDom.elementClose('nav');
 }
@@ -53,7 +55,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function $logo(opt_data, opt_ijData, opt_ijData_deprecated) {
+function __deltemplate_s14_f01bb695(opt_data, opt_ijData, opt_ijData_deprecated) {
   opt_ijData = opt_ijData_deprecated || opt_ijData;
   opt_data = opt_data || {};
   incrementalDom.elementOpenStart('div');
@@ -87,10 +89,11 @@ function $logo(opt_data, opt_ijData, opt_ijData_deprecated) {
     incrementalDom.elementClose('a');
   incrementalDom.elementClose('div');
 }
-exports.logo = $logo;
+exports.__deltemplate_s14_f01bb695 = __deltemplate_s14_f01bb695;
 if (goog.DEBUG) {
-  $logo.soyTemplateName = 'Topbar.logo';
+  __deltemplate_s14_f01bb695.soyTemplateName = 'Topbar.__deltemplate_s14_f01bb695';
 }
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('Topbar.logo.idom'), '', 0, __deltemplate_s14_f01bb695);
 
 
 /**
@@ -174,8 +177,6 @@ soy.$$registerDelegateFn(soy.$$getDelTemplateId('Topbar.item.idom'), 'default', 
 
 exports.render.params = ["items","logo","style"];
 exports.render.types = {"items":"any","logo":"any","style":"any"};
-exports.logo.params = ["logo"];
-exports.logo.types = {"logo":"any"};
 exports.menu.params = ["items"];
 exports.menu.types = {"items":"any"};
 templates = exports;

@@ -9,9 +9,9 @@
   {let $styleClasses: $style ? 'topbar ' + $style : 'topbar' /}
 
   <nav class="{$styleClasses}">
-    {call .logo}
+    {delcall Topbar.logo}
       {param logo: $logo /}
-    {/call}
+    {/delcall}
 
     {call .menu}
       {param items: $items /}
@@ -22,7 +22,7 @@
 /**
  * @param? logo
  */
-{template .logo}
+{deltemplate Topbar.logo}
   <div class="topbar-logo">
     {let $href: $logo and $logo.href ? $logo.href : '/' /}
 
@@ -40,7 +40,7 @@
       {/if}
     </a>
   </div>
-{/template}
+{/deltemplate}
 
 /**
  * @param items
